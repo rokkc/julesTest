@@ -1,0 +1,39 @@
+Farmer John is expanding his farm! He has identified the perfect location in the Red-Black Forest, which consists of N trees ( \( \left.1 \leq \mathrm{N} \leq 10^{5}\right) \) on a number line, with the i-th tree at position \( \mathrm{x}_{\mathrm{i}}\left(-10^{9} \leq \mathrm{x}_{\mathrm{i}} \leq 10^{9}\right) \).
+
+Environmental protection laws restrict which trees Farmer John can cut down to make space for his farm. There are K restrictions \( \left(1 \leq \mathrm{K} \leq 10^{5}\right) \) specifying that there must always be at least \( t_{i} \) trees \( \left(1 \leq t_{i} \leq N\right) \) in the line segment \( \left[1, r_{i}\right] \), including the endpoints \( \left(-10^{9} \leq 1_{\mathrm{i}} \leq \mathrm{r}_{\mathrm{i}} \leq 10^{9}\right) \). It is guaranteed that the Red-Black Forest initially satisfies these restrictions.
+
+Farmer John wants to make his farm as big as possible. Please help him compute the maximum number of trees he can cut down while still satisfying all the restrictions!
+
+INPUT FORMAT (input arrives from the terminal / stdin):
+Each input consists of \( \mathrm{T}(1 \leq \mathrm{T} \leq 10) \) independent test cases. It is guaranteed that the sums of all N and of all K within an input each do not exceed \( 3 \cdot 10^{5} \).
+
+The first line of input contains T. Each test case is then formatted as follows:
+- The first line contains integers N and K .
+- The next line contains the N integers \( \mathrm{x}_{1}, \ldots, \mathrm{x}_{\mathrm{N}} \).
+- Each of the next \( K \) lines contains three space-separated integers: \( 1_{i}, r_{i} \) and \( t_{i} \).
+
+OUTPUT FORMAT (print output to the terminal / stdout):
+For each test case, output a single line with an integer denoting the maximum number of trees Farmer John can cut down.
+
+SAMPLE INPUT:
+3
+7 1
+8 4 10 1 2 6 7
+2 9 3
+7 2
+8 4 10 1 2 6 7
+2 9 3
+1 10 1
+7 2
+8 4 10 1 2 6 7
+2 9 3
+1 10 4
+SAMPLE OUTPUT:
+4
+4
+3
+
+For the first test case, Farmer John can cut down the first 4 trees, leaving trees at \( x_{i}=2,6,7 \) to satisfy the restriction.
+For the second test case, the additional restriction does not affect which trees Farmer John can cut down, so he can cut down the same trees and satisfy both restrictions.
+
+For the third test case, Farmer John can only cut down at most 3 trees because there are initially 7 trees but the second restriction requires him to leave at least 4 trees uncut.
